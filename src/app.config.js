@@ -27,11 +27,9 @@ function configs($httpProvider) {
     $httpProvider.interceptors.push(interceptor);
 }
 
-function runs($rootScope, PageValues) {
+function runs($rootScope) {
     $rootScope.$on('$routeChangeStart', function() {
-        PageValues.loading = true;
     });
     $rootScope.$on('$routeChangeSuccess', function() {
-        PageValues.loading = false;
     });
 }

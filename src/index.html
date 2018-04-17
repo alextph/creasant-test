@@ -4,33 +4,25 @@
     <title>Creasant Digital Limited</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <!-- build:css assets/css/styles.css -->
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/font-icons.css" type='text/css'>
     <link rel="stylesheet" href="assets/css/animations.css"/>
     <link rel="stylesheet" href="assets/css/style.css"/>
     <link rel="stylesheet" href="assets/css/swiper.min.css">
     <link rel="stylesheet" href="sections/home/home.css"/>
-    <link rel="stylesheet" href="components/show/show.css"/>
-    <link rel="stylesheet" href="sections/view/view.css"/>
-    <link rel="stylesheet" href="sections/search/search.css"/>
-    <link rel="stylesheet" href="sections/premieres/premieres.css"/>
     <!-- endbuild -->
 </head>
-<body data-ng-app="app">
+<body ng-app="app">
 
     <header id="site-header">
-        <div class="container">
+        <div class="container" ng-controller="NavbarController as navbar">
             <div class="pull-left logo"><img src="assets/images/logo.png" /></div>
-            <ul class="pull-right menu">
-                <li><a href="#/">Home</a></li>
-                <li><a href="#/aboutus">About Us</a></li>
-                <li><a href="#/solutions">Solutions</a></li>
-                <li><a href="#/portfolio">Portfolio</a></li>
-                <li><a href="#/clients">Clients</a></li>
-                <li><a href="#/contactus">Contact Us</a></li>
-                <li><a class="signin" href="#/signin">Sign In</a></li>
+            <ul class="pull-right menu" >
+                <li ng-repeat="item in navbar.items" ng-class="{ active: isActive('{{item.path}}')}">
+                    <a class="{{item.className}}" href="{{item.href}}">{{item.name}}</a>
+                </li>
             </ul>
         </div>
     </header>
@@ -47,8 +39,8 @@
                 <li><a><img src="assets/images/mobiletech_logo.png" /></a></li>
                 <li>Copyright © 2018 Creasant Digital Limited. All rights reserved.</li>
             </div>
-            <div class="pull-right">
-               
+            <div class="pull-right socialnetwork">
+               <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fcreasant%2F&width=73&layout=button_count&action=like&size=small&show_faces=false&share=false&height=21&appId=1520927921533235" width="73" height="21" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
             </div>
         </div>
     </footer>
@@ -57,14 +49,9 @@
     <!-- build:assets assets.min.js -->
     <!-- ASSETS -->
         <script src="assets/js/angular.min.js"></script>
-        <script src="assets/js/angular-animate.min.js"></script>
-        <script src="assets/js/angular-cookies.min.js"></script>
         <script src="assets/js/angular-route.min.js"></script>
-        <script src="assets/js/angular-touch.min.js"></script>
-        <script src="assets/js/moment.min.js"></script>
-        <script src="assets/js/angular-moment.min.js"></script>
-        <script src="assets/js/angular-truncate.js"></script>
-        <script src="assets/js/angular-preload-image.min.js"></script>
+        <script src="assets/js/angular-animate.min.js"></script>
+        <script src="assets/js/angular-sanitize.min.js"></script>
         <script src="assets/js/swiper.min.js"></script>
     <!-- / -->
     <!-- endbuild -->
@@ -77,23 +64,16 @@
         <script src="app.js"></script>
     <!-- / -->
     <!-- CONTROLLERS -->
+        <script src="components/navbar/navbar.ctrl.js"></script>
         <script src="sections/home/home.ctrl.js"></script>
-        <script src="sections/premieres/premieres.ctrl.js"></script>
-        <script src="sections/search/search.ctrl.js"></script>
-        <script src="sections/view/view.ctrl.js"></script>
-        <script src="components/bar/bar.ctrl.js"></script>
-        <script src="sections/popular/popular.ctrl.js"></script>
     <!-- / -->
     <!-- SERVICES -->
-        <script src="services/show.fct.js"></script>
-        <script src="services/page.val.js"></script>
+
     <!-- / -->
     <!-- DIRECTIVES -->
-        <script src="components/show/show.drct.js"></script>
-        <script src="directives/ngEnter.drct.js"></script>
+        <script src="directives/swiper-slider.drct.js"></script>
     <!-- / -->
     <!-- inject:js -->
-    <script src="app.templates.js"></script>
     <!-- endinject -->
     <!-- endbuild -->
 </body>

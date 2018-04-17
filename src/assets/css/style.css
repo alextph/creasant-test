@@ -1,5 +1,20 @@
+* {
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: all .2s linear;
+    -o-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+}
+
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Karla', sans-serif;
+}
+
+.s-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .swiper-slide img {
@@ -19,6 +34,28 @@ body {
 
 .swiper-button-next {
     right: 14% !important;
+}
+
+.swiper-slide .content {
+    width: 100%;
+    text-align: center;
+    color: #FFF;
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -44%);
+}
+
+.swiper-slide .content .title {
+    font-size: 4.95vw;
+}
+
+.swiper-slide .content .desc {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.29vw;
+    font-weight: lighter;
+    width: 30%;
+    margin: 0 auto;
 }
 
 
@@ -52,10 +89,11 @@ body {
 #site-header .menu li a {
     line-height: 90px;
     color: #989898;
-    transition: color .2s linear;
-    -o-transition: color .2s linear;
-    -moz-transition: color .2s linear;
-    -webkit-transition: color .2s linear;
+    text-decoration: none;
+}
+
+#site-header .menu li.active a {
+    color: #428bca;
 }
 
 #site-header .menu li a.signin {
@@ -72,7 +110,7 @@ body {
 }
 
 #site-footer {
-    background-color: #2FA4C7;
+    background-color: #008FBE;
     color: #FFF;
 }
 
@@ -97,6 +135,9 @@ body {
 
 #site-footer .menu li:last-child {
     position: relative;
+    padding: 0 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
 }
 
 #site-footer .menu li:last-child:before {
@@ -104,5 +145,9 @@ body {
     color: #FFF;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 7px;
+}
+
+#site-footer .socialnetwork {
+    line-height: 60px;
 }

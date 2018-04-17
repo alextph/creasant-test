@@ -1,100 +1,168 @@
-.home-frame {
+#home_wrapper {
+    padding: 6% 0;
+}
+
+#home_wrapper .topic {
+    position: relative;
+    text-align: center;
+    font-size: 38px;
+    color: #008EBE;
+    font-weight: bold;
+}
+
+#home_wrapper .topic:after {
+    content: '';
+    width: 80px;
+    height: 2px;
+    background: #008EBE;
     position: absolute;
+    bottom: -7px;
+    left: 50%;
+    transform: translate(-50%, 7px);
+}
+
+#home_wrapper .service_container .content {
+    padding-top: 6%;
+}
+
+#home_wrapper .service_container .service {
+    display: inline-block;
+    vertical-align: top;
+    width: 31.3%;
+    position: relative;
+    margin: 1.5% 0;
+}
+
+#home_wrapper .service_container .service:nth-child(3n+2) {
+    margin: 1.5% 3%;
+}
+
+#home_wrapper .service_container .service .bg {
+    width: 100%;
+}
+
+#home_wrapper .service_container .service .button {
+    position: absolute;
+    left: 15px;
+    bottom: 30px;
+    background: #008ebecc;
+    color: #FFF;
+    height: 61px;
+}
+
+#home_wrapper .service_container .service .button.ng-hide {
+    opacity: 0;
+}
+
+#home_wrapper .service_container .service .button.icon {
+    width: 61px;
+}
+
+#home_wrapper .service_container .service .button.icon img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#home_wrapper .service_container .service .button.name {
+    left: 0;
+    width: 50%;
+}
+
+#home_wrapper .service_container .service .button.name span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    letter-spacing: .5px;
+    line-height: 18px;
+    width: 100%;
+    padding: 0 15px;
+    font-size: 18px;
+}
+
+#home_wrapper .aboutus_container {
+    padding-top: 10%;
+}
+
+#home_wrapper .aboutus_container .topic,
+#home_wrapper .aboutus_container .content {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#home_wrapper .aboutus_container .topic {
+    width: 30%;
+    text-align: left;
+}
+
+#home_wrapper .aboutus_container .topic:after {
+    left: 0;
+    transform: translate(0, 7px);
+}
+
+#home_wrapper .aboutus_container .content {
+    width: 70%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    line-height: 30px;
+    color: #4C4C4C;
+}
+
+.consultation_container {
+    position: relative;
+    height: 480px;
+    overflow: hidden;
+}
+
+.consultation_container:after {
+    content: '';
+    position: absolute;
+    top: 0;
     left: 0;
     right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 1;
 }
-.home-banner {
-    background: url('../../assets/images/shattered.png');
-}
-.home-banner .inner {
-    padding: 60px 0 0 0;
-}
-.home-banner .inner img {
-    float: left;
-    margin-top: -45px;
-}
-.home-banner .inner h1 {
-    line-height: 60px;
-    font-size: 40px;
-}
-.home-banner .inner h1 span {
-    color: #3bb9bb;
-}
-.home-banner .inner h2 {
-    font-size: 24px;
-    line-height: 30px;
-    color: #666;
-}
-.home-banner .inner p {
-    font-size: 16px;
-    line-height: 25px;
-    margin-top: 30px;
-}
-.tutorials-title {
-    font-size: 30px;
-    line-height: 50px;
-    font-weight: 300;
-    background-color: #333;
-    color: #FFF;
-}
-.tutorials {
-    margin: 20px 0;
-    padding: 0;
-    list-style: none;
-}
-.tutorials li {
-    position: relative;
-    background-color: #FFF;
-    padding: 20px 150px 20px 20px;
-    margin-bottom: 20px;
-}
-.tutorials li.offline {
-    background-color: #999999;
-    color: #666666;
-}
-.tutorials li .btn {
+
+.consultation_container img {
     position: absolute;
-    right: 40px;
-    top: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
 }
-.tutorials li p {
-    margin: 10px 0 0 0;
-    font-size: 16px;
-    line-height: 20px;
-    color: #666;
+
+.consultation_container .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFF;
+    z-index: 2;
 }
-.tutorials li .number {
-    width: 80px;
-    height: 80px;
-    float: left;
-    background-color: #333;
-    margin: 0 20px 0 0;
-    text-align: center;
-    line-height: 80px;
-    font-size: 40px;
-    color: #CCC;
+
+.consultation_container .content .topic {
+    font-size: 38px;
+    font-weight: bold;
 }
-.tutorials li.offline .number {
-    background-color: #919191;
-    color: #666;
+
+.consultation_container .content .desc {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    padding: 20px 0;
 }
-.share-buttons {
-    float: right;
-    width: 330px;
-    height: 50px;
-    margin-top: -10px;
+
+.consultation_container .content .button {
+    padding: 40px 0;
 }
-.home-buttons {
-    text-align: center;
-    padding: 20px 0 40px 0;
-}
-.no-data.tuts {
-    line-height: 50px;
-    margin-bottom: 30px;
-}
-@media(max-width:992px) {
-    .home-banner .inner {
-        width: 100%;
-        padding: 20px;
-    }
+
+.consultation_container .content .button a {
+    color: #FFF;
+    background: #3B3D41;
+    padding: 20px;
+    text-decoration: none;
 }

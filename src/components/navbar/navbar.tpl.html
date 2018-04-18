@@ -1,0 +1,5 @@
+<ul id="navbar" class="pull-right" >
+    <li ng-repeat="item in $ctrl.items" ng-class="{ active: isActive('{{item.path}}')}">
+        <a class="{{item.className}}" href="{{item.href}}">{{item.name}}</a>
+    </li>
+</ul>

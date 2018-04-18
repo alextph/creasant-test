@@ -1,6 +1,7 @@
 * {
     font-size: 16px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     transition: all .2s linear;
     -o-transition: all .2s linear;
     -moz-transition: all .2s linear;
@@ -18,51 +19,18 @@ body {
     padding: 0;
 }
 
-.swiper-slide img {
-    width: 100%;
-    vertical-align: top;
+#main {
+    margin-top: 90px;
 }
-
-.swiper-button-next, .swiper-button-prev {
-    width: 10px !important;
-    height: 20px !important;
-    background-size: 10px 20px !important;
-}
-
-.swiper-button-prev {
-    left: 14% !important;
-}
-
-.swiper-button-next {
-    right: 14% !important;
-}
-
-.swiper-slide .content {
-    width: 100%;
-    text-align: center;
-    color: #FFF;
-    position: absolute;
-    top: 44%;
-    left: 50%;
-    transform: translate(-50%, -44%);
-}
-
-.swiper-slide .content .title {
-    font-size: 4.95vw;
-}
-
-.swiper-slide .content .desc {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.29vw;
-    font-weight: lighter;
-    width: 30%;
-    margin: 0 auto;
-}
-
 
 #site-header {
     background-color: #FFF;
     color: #000;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
 }
 
 #site-header .container {
@@ -76,45 +44,11 @@ body {
     width: 184px;
 }
 
-#site-header .menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-#site-header .menu li {
-    display: inline-block;
-    padding: 0 20px;
-}
-
-#site-header .menu li a {
-    line-height: 90px;
-    color: #989898;
-    text-decoration: none;
-}
-
-#site-header .menu li.active a {
-    color: #428bca;
-}
-
-#site-header .menu li a.signin {
-    padding: 10px 21px;
-    border: 1px solid #428bca;
-    border-radius: 5px;
-    color: #428bca;
-}
-
-#site-header .menu li a:hover {
-    line-height: 90px;
-    color: #2FA4C7;
-    text-decoration: none;
-}
-
 #site-footer {
     background-color: #008FBE;
     color: #FFF;
+    height: 60px;
 }
-
 
 #site-footer .menu li {
     display: inline-block;
@@ -129,11 +63,16 @@ body {
     -webkit-transition: color .2s linear;
 }
 
+#site-footer .menu li:first-child {
+    padding-left: 0;
+}
+
 #site-footer .menu li:last-child {
     position: relative;
     padding: 0 30px;
     font-family: 'Roboto', sans-serif;
     font-weight: lighter;
+    font-size: 14px;
 }
 
 #site-footer .menu li:last-child:before {
@@ -145,5 +84,14 @@ body {
 }
 
 #site-footer .socialnetwork {
-    line-height: 60px;
+    position: relative;
+    height: 60px;
+}
+
+#site-footer .socialnetwork iframe {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
 }

@@ -4,7 +4,7 @@ angular
     .controller('HomeController', function($scope) {
         //Setup view model object
         var vm = this;
-        vm.items = [
+        $scope.slideData = [
             {
                 file: "assets/uploads/home_slider/1.png",
                 title: "ATTRACTIVE ENOUGH?",
@@ -16,10 +16,6 @@ angular
                 description: "As easy and convenient way for others to have your information at their fingertips",
             }
         ];
-
-        $scope.getSlide = function () {
-            return vm.items;
-        }
     })
     .controller('ServiceController', function ($scope) {
         //Setup view model object
@@ -59,9 +55,9 @@ angular
     });
 
 
-
 window.onload = function () {
     var swiper = new Swiper('.swiper-container', {
+        autoHeight: true,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',

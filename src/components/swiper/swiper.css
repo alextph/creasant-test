@@ -1,0 +1,42 @@
+.swiper-slide img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    width: 10px !important;
+    height: 20px !important;
+    background-size: 10px 20px !important;
+}
+
+.swiper-button-prev {
+    left: 14% !important;
+}
+
+.swiper-button-next {
+    right: 14% !important;
+}
+
+.swiper-slide .content {
+    width: 100%;
+    text-align: center;
+    color: #FFF;
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -44%);
+    transform: translate(-50%, -44%);
+}
+
+.swiper-slide .content .title {
+    font-size: 4.95vw;
+}
+
+.swiper-slide .content .desc {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.29vw;
+    font-weight: lighter;
+    width: 30%;
+    margin: 0 auto;
+}

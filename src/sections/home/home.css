@@ -1,5 +1,21 @@
-#home_wrapper {
-    padding: 6% 0;
+#home_wrapper .swiper-container {
+    height: 892px;
+}
+
+#home_wrapper .swiper-slide {
+    height: 100%;
+    overflow: hidden;
+}
+
+#home_wrapper .swiper-slide img {
+    width: auto;
+    height: 100%;
+    vertical-align: top;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 }
 
 #home_wrapper .topic {
@@ -18,7 +34,12 @@
     position: absolute;
     bottom: -7px;
     left: 50%;
-    transform: translate(-50%, 7px);
+    -webkit-transform: translate(-50%, 7px);
+            transform: translate(-50%, 7px);
+}
+
+#home_wrapper .service_container {
+    padding-top: 6%;
 }
 
 #home_wrapper .service_container .content {
@@ -62,7 +83,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 }
 
 #home_wrapper .service_container .service .button.name {
@@ -73,7 +95,8 @@
 #home_wrapper .service_container .service .button.name span {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
     letter-spacing: .5px;
     line-height: 18px;
     width: 100%;
@@ -82,7 +105,7 @@
 }
 
 #home_wrapper .aboutus_container {
-    padding-top: 10%;
+    padding: 10% 0;
 }
 
 #home_wrapper .aboutus_container .topic,
@@ -98,7 +121,8 @@
 
 #home_wrapper .aboutus_container .topic:after {
     left: 0;
-    transform: translate(0, 7px);
+    -webkit-transform: translate(0, 7px);
+            transform: translate(0, 7px);
 }
 
 #home_wrapper .aboutus_container .content {
@@ -132,7 +156,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     height: 100%;
 }
 
@@ -140,7 +165,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     color: #FFF;
     z-index: 2;
 }
@@ -162,7 +188,7 @@
 
 .consultation_container .content .button a {
     color: #FFF;
-    background: #3B3D41;
+    background: #383a3ecc;
     padding: 20px;
     text-decoration: none;
 }

@@ -11,19 +11,18 @@
     <link rel="stylesheet" href="assets/css/animations.css"/>
     <link rel="stylesheet" href="assets/css/style.css"/>
     <link rel="stylesheet" href="assets/css/swiper.min.css">
+    <link rel="stylesheet" href="components/navbar/navbar.css"/>
+    <link rel="stylesheet" href="components/swiper/swiper.css"/>
     <link rel="stylesheet" href="sections/home/home.css"/>
+    <link rel="stylesheet" href="sections/aboutus/aboutus.css"/>
     <!-- endbuild -->
 </head>
 <body ng-app="app">
 
     <header id="site-header">
-        <div class="container" ng-controller="NavbarController as navbar">
+        <div class="container">
             <div class="pull-left logo"><img src="assets/images/logo.png" /></div>
-            <ul class="pull-right menu" >
-                <li ng-repeat="item in navbar.items" ng-class="{ active: isActive('{{item.path}}')}">
-                    <a class="{{item.className}}" href="{{item.href}}">{{item.name}}</a>
-                </li>
-            </ul>
+            <navbar></navbar>
         </div>
     </header>
 
@@ -65,13 +64,15 @@
     <!-- / -->
     <!-- CONTROLLERS -->
         <script src="components/navbar/navbar.ctrl.js"></script>
+        <script src="components/swiper/swiper.ctrl.js"></script>
         <script src="sections/home/home.ctrl.js"></script>
+        <script src="sections/aboutus/aboutus.ctrl.js"></script>
     <!-- / -->
     <!-- SERVICES -->
 
     <!-- / -->
     <!-- DIRECTIVES -->
-        <script src="directives/swiper-slider.drct.js"></script>
+        <!-- <script src="directives/swiper-slider.drct.js"></script> -->
     <!-- / -->
     <!-- inject:js -->
     <!-- endinject -->

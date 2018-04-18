@@ -1,0 +1,33 @@
+#navbar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+#navbar li a {
+    line-height: 90px;
+    color: #989898;
+    text-decoration: none;
+}
+
+#navbar li.active a {
+    color: #428bca;
+}
+
+#navbar li a.signin {
+    padding: 10px 21px;
+    border: 1px solid #428bca;
+    border-radius: 5px;
+    color: #428bca;
+}
+
+#navbar li a:hover {
+    line-height: 90px;
+    color: #2FA4C7;
+    text-decoration: none;
+}

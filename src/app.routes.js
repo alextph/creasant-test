@@ -15,6 +15,10 @@ function config ($routeProvider, $locationProvider) {
             templateUrl: 'sections/aboutus/aboutus.tpl.html',
             controller: 'AboutUsController as aboutus'
         })
+        .when('/solutions', {
+            templateUrl: 'sections/solutions/solutions.tpl.html',
+            controller: 'SolutionsController as solutions'
+        })
         .otherwise({
             redirectTo: '/'
         });

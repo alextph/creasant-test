@@ -7,14 +7,16 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <!-- build:css assets/css/styles.css -->
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/font-icons.css" type='text/css'>
-    <link rel="stylesheet" href="assets/css/animations.css"/>
-    <link rel="stylesheet" href="assets/css/style.css"/>
-    <link rel="stylesheet" href="assets/css/swiper.min.css">
-    <link rel="stylesheet" href="components/navbar/navbar.css"/>
-    <link rel="stylesheet" href="components/swiper/swiper.css"/>
-    <link rel="stylesheet" href="sections/home/home.css"/>
-    <link rel="stylesheet" href="sections/aboutus/aboutus.css"/>
+    <link rel="stylesheet" href="assets/css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/animations.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/swiper.min.css" type="text/css" />
+    <link rel="stylesheet" href="components/navbar/navbar.css" type="text/css" />
+    <link rel="stylesheet" href="components/swiper/swiper.css" type="text/css" />
+    <link rel="stylesheet" href="components/fixedbanner/fixedbanner.css" type="text/css" />
+    <link rel="stylesheet" href="sections/home/home.css" type="text/css" />
+    <link rel="stylesheet" href="sections/aboutus/aboutus.css" type="text/css" />
+    <link rel="stylesheet" href="sections/solutions/solutions.css" type="text/css" />
     <!-- endbuild -->
 </head>
 <body ng-app="app">
@@ -27,7 +29,7 @@
     </header>
 
     <section id="main">
-        <ng-view></ng-view>
+        <ng-view autoscroll="true"></ng-view>
     </section>
 
     <footer id="site-footer">
@@ -65,8 +67,10 @@
     <!-- CONTROLLERS -->
         <script src="components/navbar/navbar.ctrl.js"></script>
         <script src="components/swiper/swiper.ctrl.js"></script>
+        <script src="components/fixedbanner/fixedbanner.ctrl.js"></script>
         <script src="sections/home/home.ctrl.js"></script>
         <script src="sections/aboutus/aboutus.ctrl.js"></script>
+        <script src="sections/solutions/solutions.ctrl.js"></script>
     <!-- / -->
     <!-- SERVICES -->
 

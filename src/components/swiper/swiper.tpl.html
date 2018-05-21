@@ -3,8 +3,11 @@
         <div class="swiper-slide" ng-repeat="item in $ctrl.data">
             <img src="{{item.file}}" />
             <div class="content">
-                <div class="title">{{item.title}}</div>
-                <div class="desc" ng-bind-html="item.description"></div>
+                <div class="content-container">
+                    <div class="subtitle" ng-show="item.subtitle">{{item.subtitle}}</div>
+                    <div class="title" ng-show="item.title">{{item.title}}</div>
+                    <div class="desc" ng-bind-html="item.description" ng-show="item.description"></div>
+                </div>
             </div>
         </div>
     </div>

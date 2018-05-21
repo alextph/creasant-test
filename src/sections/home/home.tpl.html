@@ -1,38 +1,40 @@
 <div id="home_wrapper" >
     <swiper-slider data="slideData"></swiper-slider>
 
-    <div class="s-container">
-        <div class="service_container" ng-controller="ServiceController as service">
-            <div class="topic">OUR SERVICES</div>
-            <div class="content">
-                <div class="service" ng-repeat="item in service.items" ng-mouseenter="options=true" ng-mouseleave="options=false">
-                    <img class="bg" src="{{item.bg}}" />
-                    <div ng-hide="options" class="icon button">
-                        <img src="{{item.icon}}" />
-                    </div>
-                    <div ng-show="options" class="name button">
-                        <span>{{item.name}}</span>
+    <div class="home_container">
+        <div class="s-container">
+            <div class="service_container" ng-controller="ServiceController as service">
+                <div class="topic">OUR SERVICES</div>
+                <div class="content">
+                    <div class="service" ng-repeat="item in service.items" ng-mouseenter="options=true" ng-mouseleave="options=false">
+                        <img class="bg" src="{{item.bg}}" />
+                        <div ng-hide="options" class="icon button">
+                            <img src="{{item.icon}}" />
+                        </div>
+                        <div ng-show="options" class="name button">
+                            <span>{{item.name}}</span>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="aboutus_container">
+                <div class="topic">ABOUT US</div><div class="content">Welcome to Creasant Digital Limited. Creative, Dedicated and Spirit of Excellence is borne with our heartbeat. We are committed
+                to develop, to implement and to deploy successful yet high valued and quality Information Technology solutions to our clients.Our
+                services include the areas covering Website and Web Platforms, Mobile Technology, Online Marketing, Electronic Greetings,
+                Corporate Identity and eBooks & Digtial Signages.</div>
+            </div>
         </div>
 
-        <div class="aboutus_container">
-            <div class="topic">ABOUT US</div><div class="content">Welcome to Creasant Digital Limited. Creative, Dedicated and Spirit of Excellence is borne with our heartbeat. We are committed
-            to develop, to implement and to deploy successful yet high valued and quality Information Technology solutions to our clients.Our
-            services include the areas covering Website and Web Platforms, Mobile Technology, Online Marketing, Electronic Greetings,
-            Corporate Identity and eBooks & Digtial Signages.</div>
-        </div>
-    </div>
-</div>
-
-<div class="consultation_container">
-    <img src="../../assets/images/consultaion.png" />
-    <div class="s-container content">
-        <div class="topic">Ready for free consultation?</div>
-        <div class="desc">Call us on +852 2622 2520 or</div>
-        <div class="button">
-            <a href="#/enquiryonline">ENQUIRY ONLINE</a>
+        <div class="consultation_container">
+            <img src="../../assets/images/consultaion.png" />
+            <div class="s-container content">
+                <div class="topic">Ready for free consultation?</div>
+                <div class="desc">Call us on +852 2622 2520 or</div>
+                <div class="button">
+                    <a href="#/enquiryonline">ENQUIRY ONLINE</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

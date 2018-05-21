@@ -1,0 +1,20 @@
+<div class="fixed_banner_wrapper">
+    <img class="bg" src="{{$ctrl.data.banner}}" />
+    <div class="info_wrapper">
+        <div class="s-container">
+            <div class="info_container">
+                <div class="breadcrumb">
+                    <div class="breadcrumb-item">HOME</div>
+                    <div class="breadcrumb-item" ng-repeat="item in $ctrl.data.breadcrumb">{{item}}</div>
+                </div>
+                <div class="title">{{$ctrl.data.title}}</div>
+                <div class="share">
+                    <div class="share_title">{{$ctrl.data.share_title}}</div>
+                    <a href="#"><img src="assets/images/fb.png" /></a>
+                    <a href="#"><img src="assets/images/gplus.png" /></a>
+                    <a href="#"><img src="assets/images/twitter.png" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

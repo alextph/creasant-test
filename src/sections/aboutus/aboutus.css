@@ -1,0 +1,43 @@
+.scrollpad_wrapper {
+    margin-bottom: 70px;
+}
+
+.scrollpad_wrapper .scrollpad .scrollpad-item .scrollpad-container .title {
+    color: #4C4C4C;
+    font-size: 38px;
+    font-weight: bold;
+    padding-bottom: 40px;
+}
+
+.scrollpad_wrapper .scrollpad .scrollpad-item .scrollpad-container .content {
+    font-family: 'Roboto';
+    font-weight: lighter;
+    color: #4C4C4C;
+    line-height: 30px;
+}
+
+.scrollpad_wrapper .scrollpad .scrollpad-item .scrollpad-container .content .checkbox_list .checkbox-item {
+    position: relative;
+    margin: 15px 0;
+}
+
+.scrollpad_wrapper .scrollpad .scrollpad-item .scrollpad-container .content .checkbox_list .checkbox-item:first-child,
+.scrollpad_wrapper .scrollpad .scrollpad-item .scrollpad-container .content .checkbox_list .checkbox-item:last-child {
+    margin: 0;
+}
+
+.scrollpad_wrapper .scrollpad .scrollpad-item .scrollpad-container .content .checkbox_list .checkbox-item:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #E8E8E8;
+}
+
+.scrollpad_wrapper .scrollpad .scrollpad-item .scrollpad-container .content .checkbox_list .checkbox-item div {
+    color: #4C4C4C;
+    font-family: 'Roboto';
+    margin-left: 30px;
+}

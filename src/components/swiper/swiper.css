@@ -19,6 +19,11 @@
 }
 
 .swiper-slide .content {
+    position: relative;
+    height: 100%;;
+}
+
+.swiper-slide .content-container {
     width: 100%;
     text-align: center;
     color: #FFF;
@@ -27,6 +32,10 @@
     left: 50%;
     -webkit-transform: translate(-50%, -44%);
     transform: translate(-50%, -44%);
+}
+
+.swiper-slide .content .subtitle {
+    font-size: 1.3vw;
 }
 
 .swiper-slide .content .title {

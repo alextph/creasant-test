@@ -1,7 +1,7 @@
 <div class="swiper-container">
     <div class="swiper-wrapper">
         <div class="swiper-slide" ng-repeat="item in $ctrl.data">
-            <img src="{{item.file}}" />
+            <img ng-src="{{item.file}}" />
             <div class="content">
                 <div class="content-container">
                     <div class="subtitle" ng-show="item.subtitle">{{item.subtitle}}</div>

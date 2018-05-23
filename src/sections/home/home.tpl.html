@@ -7,9 +7,9 @@
                 <div class="topic">OUR SERVICES</div>
                 <div class="content">
                     <div class="service" ng-repeat="item in service.items" ng-mouseenter="options=true" ng-mouseleave="options=false">
-                        <img class="bg" src="{{item.bg}}" />
+                        <img class="bg" ng-src="{{item.bg}}" />
                         <div ng-hide="options" class="icon button">
-                            <img src="{{item.icon}}" />
+                            <img ng-src="{{item.icon}}" />
                         </div>
                         <div ng-show="options" class="name button">
                             <span>{{item.name}}</span>

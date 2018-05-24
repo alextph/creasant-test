@@ -8,10 +8,11 @@ var log4js = require('log4js');
 var sass = require('gulp-sass');
 var injectLivereload = require('connect-livereload');
 var _ = require('lodash');
+var pkg = require('./package.json')
 
 
 var logger = log4js.getLogger();
-logger.level = "dev";
+logger.level = 'debug';
 
 gulp.task('webpack', function(){
   let config = {
@@ -42,13 +43,13 @@ gulp.task('server', function() {
   let app = express();
   app.use(injectLivereload())
   app.use(express.static(path.join(__dirname, "src")));
-  let server = app.listen(8282, ()=> {
+  let server = app.listen(pkg.config.port, ()=> {
     logger.info(`Server started http://localhost:${server.address().port}`)
   });
 });
 
 gulp.task('watch', function () {
-    livereload.listen(); // Starts livereload
+    livereload.listen({port: pkg.config.port+30000}); // Starts livereload
     gulp.watch(['src/_js/**/*.js', 'src/**/*.html'], ['webpack'])
     gulp.watch(['src/**/*.css', 'src/**/*.scss'], ['sass'])
     gulp.watch(['src/styles/main.css'], ['reloadCss'])

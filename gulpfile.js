@@ -64,5 +64,5 @@ gulp.task('sass', function () {
 gulp.task('default', ['start']);
 
 gulp.task('start', ()=>{
-  return runSequence('webpack', 'server', 'watch');
+  return runSequence(['webpack', 'sass'], 'server', 'watch');
 })

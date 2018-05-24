@@ -46,7 +46,7 @@ gulp.task('reloadCss', ()=> {
 
 // zip dist for deployment
 gulp.task('zip', ()=> {
-  return gulp.src('dist/*')
+  return gulp.src('dist/**/*')
     .pipe(zip(`${pkg.name}-${pkg.version}.zip`))
     .pipe(gulp.dest('.'))
 })

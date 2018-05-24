@@ -1,9 +1,10 @@
 'use strict';
 
-import angular from 'angular'
+import 'angular/angular.min'
 import 'angular-route'
 import 'angular-animate'
 import 'angular-sanitize'
+import 'ng-swiper'
 
 import './app.config'
 import './app.core'
@@ -20,5 +21,5 @@ import '../sections/home/home.ctrl'
 import '../sections/aboutus/aboutus.ctrl'
 import '../sections/solutions/solutions.ctrl'
 
-angular.module('app', ['ngRoute', 'ngAnimate', 'ngSanitize', 'app.routes', 'app.core', 'app.services', 'app.config']);
+angular.module('app', ['ngRoute', 'ngAnimate', 'ngSanitize', 'app.routes', 'app.core', 'app.services', 'app.config', 'ngSwiper']);
 

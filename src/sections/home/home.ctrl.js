@@ -16,6 +16,11 @@ angular
                 description: "As easy and convenient way for others to have your information at their fingertips",
             }
         ];
+
+        $scope.slides = [
+          {image : "https://raw.githubusercontent.com/oscarandreu/ng-swiper/master/examples/example_1/img/slider1.jpg"},
+          {image : "https://raw.githubusercontent.com/oscarandreu/ng-swiper/master/examples/example_1/img/slider2.jpg"}
+        ]
     })
     .controller('ServiceController', function ($scope) {
         //Setup view model object

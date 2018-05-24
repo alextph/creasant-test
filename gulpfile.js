@@ -25,11 +25,6 @@ var logError = function(error) {
 gulp.task('webpack', ()=> {
   let config = {
     output:{filename:'bundle.js'},
-    module: {
-      loaders: [
-        { test: /\.css$/, loader: 'style!css' },
-      ],
-    },
   }
   return gulp.src('src/_js/app.js')
     .pipe(webpack(config))
@@ -95,8 +90,8 @@ gulp.task('prod-server', ()=> {
 // watch html, css and js changes
 gulp.task('watch', ()=> {
     livereload.listen({port: pkg.config.port + 30000}); // Starts livereload
-    gulp.watch(['src/**/*.js', 'src/**/*.html'], ['webpack'])
-    gulp.watch(['src/**/*.css', 'src/**/*.scss'], ['sass'])
+    gulp.watch(['src/**/*.js', 'src/**/*.html', '!src/scripts/**/*'], ['webpack'])
+    gulp.watch(['src/**/*.css', 'src/**/*.scss', '!src/styles/**/*'], ['sass'])
     gulp.watch(['src/styles/main.css'], ['reloadCss'])
 });
 
@@ -108,8 +103,8 @@ gulp.task('sass', ()=> {
 });
 
 // start development
-gulp.task('start', ()=> {
-  return runSequence('clean', ['webpack', 'sass'], 'server', 'watch');
+gulp.task('start', (done)=> {
+  return runSequence('clean', ['webpack', 'sass'], 'server', 'watch', done);
 });
 
 // hook default to start

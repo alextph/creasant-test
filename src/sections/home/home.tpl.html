@@ -1,6 +1,20 @@
 <div id="home_wrapper" >
     <swiper-slider data="slideData"></swiper-slider>
 
+    <ng-swiper
+        elements="slides"
+        on-slide-change-start ="slideChange"
+        speed: "1000",
+        centeredSlides: "true",
+        autoplay: "5000",
+        autoplayDisableOnInteraction: "true",
+        slidesPerView: "1",
+        paginationClickable: "true",
+        effect: "fade",
+        loop: 'true'
+        >
+    </ng-swiper>
+
     <div class="home_container">
         <div class="s-container">
             <div class="service_container" ng-controller="ServiceController as service">

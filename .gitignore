@@ -2,3 +2,5 @@ node_modules
 build
 src/scripts
 src/styles
+dist
+creasant-test-*.zip

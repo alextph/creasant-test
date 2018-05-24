@@ -13,7 +13,18 @@ cd creasant-test
 npm install
 ```
 
-## start dev server
+## start development
 ```
 gulp start
 ```
+
+## create a build
+```
+gulp release
+```
+
+## test a build
+```
+gulp prod-server
+```
+

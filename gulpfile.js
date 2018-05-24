@@ -6,15 +6,23 @@ var runSequence = require('run-sequence');
 var path = require('path');
 var log4js = require('log4js');
 var sass = require('gulp-sass');
+var clean = require('gulp-clean');
+var zip = require('gulp-zip');
 var injectLivereload = require('connect-livereload');
 var _ = require('lodash');
 var pkg = require('./package.json')
 
-
+// standard log method using log4js
 var logger = log4js.getLogger();
 logger.level = 'debug';
 
-gulp.task('webpack', function(){
+var logError = function(error) {
+  logger.error(error)
+  this.emit('end');
+}
+
+// use webpack to pack js code
+gulp.task('webpack', ()=> {
   let config = {
     output:{filename:'bundle.js'},
     module: {
@@ -25,45 +33,84 @@ gulp.task('webpack', function(){
   }
   return gulp.src('src/_js/app.js')
     .pipe(webpack(config))
-    .on('error', function(error) {
-      logger.error(error.static)
-      this.emit('end');
-    })
+    .on('error', logError)
     .pipe(gulp.dest('src/scripts'))
     .pipe(livereload());
 })
 
-gulp.task('reloadCss', function(){
+// reload css
+gulp.task('reloadCss', ()=> {
   return gulp.src('src/styles/main.css')
     .pipe(livereload());
 })
 
-//Start a web server on port 8282 to server the src app
-gulp.task('server', function() {
+// zip dist for deployment
+gulp.task('zip', ()=> {
+  return gulp.src('dist/*')
+    .pipe(zip(`${pkg.name}-${pkg.version}.zip`))
+    .pipe(gulp.dest('.'))
+})
+
+// clean dist, styles and scripts folder
+gulp.task('clean', ()=> {
+  return gulp.src(['src/scripts', 'src/styles', './dist'], {read: false}).pipe(clean());
+})
+
+// copy assets to dist
+gulp.task('copy', ()=> {
+  return gulp.src([
+    'src/assets/**/*',
+    'src/**/*.html',
+    'src/**/*.css',
+    'src/scripts/**/*',
+    'src/styles/**/*'
+  ], {base:'./src'})
+  .pipe(gulp.dest('./dist'))
+})
+
+// to release a build
+gulp.task('release', ()=>{
+  return runSequence('clean', ['webpack', 'sass'], 'copy', 'zip');
+})
+
+// start development server
+gulp.task('server', ()=> {
   let app = express();
-  app.use(injectLivereload())
+  app.use(injectLivereload({port: pkg.config.port + 30000}))
   app.use(express.static(path.join(__dirname, "src")));
   let server = app.listen(pkg.config.port, ()=> {
-    logger.info(`Server started http://localhost:${server.address().port}`)
+    logger.info(`${pkg.name} started at http://localhost:${server.address().port}`)
   });
 });
 
-gulp.task('watch', function () {
-    livereload.listen({port: pkg.config.port+30000}); // Starts livereload
-    gulp.watch(['src/_js/**/*.js', 'src/**/*.html'], ['webpack'])
+// start production server
+gulp.task('prod-server', ()=> {
+  let app = express();
+  app.use(express.static(path.join(__dirname, "dist")));
+  let server = app.listen(pkg.config.port, ()=> {
+    logger.info(`${pkg.name} started at http://localhost:${server.address().port}`)
+  });
+});
+
+// watch html, css and js changes
+gulp.task('watch', ()=> {
+    livereload.listen({port: pkg.config.port + 30000}); // Starts livereload
+    gulp.watch(['src/**/*.js', 'src/**/*.html'], ['webpack'])
     gulp.watch(['src/**/*.css', 'src/**/*.scss'], ['sass'])
     gulp.watch(['src/styles/main.css'], ['reloadCss'])
 });
 
-gulp.task('sass', function () {
+// compile sass to css
+gulp.task('sass', ()=> {
   return gulp.src('./src/_scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./src/styles'));
 });
 
-//Default task which simply servers the source files
-gulp.task('default', ['start']);
+// start development
+gulp.task('start', ()=> {
+  return runSequence('clean', ['webpack', 'sass'], 'server', 'watch');
+});
 
-gulp.task('start', ()=>{
-  return runSequence(['webpack', 'sass'], 'server', 'watch');
-})
+// hook default to start
+gulp.task('default', ['start']);
